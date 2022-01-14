@@ -27,25 +27,58 @@
                 return "It is a tie!";
             }
             else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+                playerWins++;
                 return "You win! Rock beats Scissors.";
             }
             else if (playerSelection === "Paper" && computerSelection === "Rock") {
+                playerWins++;
                 return "You win! Paper beats Rock.";
             }
             else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+                playerWins++;
                 return "You win! Scissors beats Paper.";
             }
             else {
+                computerWins++;
                 return ("You lose! " + computerSelection + " beats " + playerSelection + ".");
             }
         }
 
+        function game() {
+            console.log(playRound(playerChoice, computerChoice));
+            console.log("Player has " + playerWins + " wins.");
+            console.log("Computer has " + computerWins + " wins.")
+
+            playerChoice = prompt("Please input a choice between Rock, Paper, or Scissors: ", "Rock");
+            computerChoice = computerPlay();
+            console.log(playRound(playerChoice, computerChoice));
+            console.log("Player has " + playerWins + " wins.");
+            console.log("Computer has " + computerWins + " wins.") 
+
+            playerChoice = prompt("Please input a choice between Rock, Paper, or Scissors: ", "Rock");
+            computerChoice = computerPlay();
+            console.log(playRound(playerChoice, computerChoice));
+            console.log("Player has " + playerWins + " wins.");
+            console.log("Computer has " + computerWins + " wins.")
+
+            playerChoice = prompt("Please input a choice between Rock, Paper, or Scissors: ", "Rock");
+            computerChoice = computerPlay();
+            console.log(playRound(playerChoice, computerChoice));
+            console.log("Player has " + playerWins + " wins.");
+            console.log("Computer has " + computerWins + " wins.")
+
+            playerChoice = prompt("Please input a choice between Rock, Paper, or Scissors: ", "Rock");
+            computerChoice = computerPlay();
+            console.log(playRound(playerChoice, computerChoice));
+            console.log("Player has " + playerWins + " wins.");
+            console.log("Computer has " + computerWins + " wins.")
+        }
+
         let playerChoice = prompt("Please input a choice between Rock, Paper, or Scissors: ", "Rock");
-        playerChoice[0].toUpperCase() + playerChoice.slice(1).toLowerCase();
         let computerChoice = computerPlay();
-        console.log(playerChoice);
-        console.log(computerChoice);
-        console.log(playRound(playerChoice, computerChoice));
+        let playerWins = 0;
+        let computerWins = 0;
+        game();
     </script>
 </body>
 </html>
